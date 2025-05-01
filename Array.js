@@ -40,6 +40,26 @@ console.log("The rest of the array is : ",  arr.splice(2,4))
 // 10. concate()     -> It adds the array values into another array 
 console.log("After adding arr1 into arr :", arr.concat(arr1))
 
+//  11 . flat()    -> To convert a nested array into the array
+const real_array = [1,2,3,[4,5,6], 7,8,[6,7],[4,5]]
+const another_array = real_array.flat(Infinity)
+console.log("The Single array will be : ",another_array)
+
+//   -> To check a value using array
+console.log(Array.isArray("Ravi"))  //    -> To check if given value is an array or not
+console.log(Array.from("ravi"))    // -> to convert a value into an array
+
+
+console.log(Array.from({name : "ravi"}))    //   -> In This case returns the empty array , becuase we have to tell it which one should convert into the array key or value
+
+
+// Note : We can use "of" instead of "from"
+
+let score1 = 100
+let score2 = 200
+let score3 = 300
+
+console.log(Array.of(score1, score2, score3))
 
 
 
