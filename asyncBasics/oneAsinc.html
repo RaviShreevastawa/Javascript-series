@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai With Boys</h1>
+    <button id="start">start</button>
+    <button id="stop">Stop</button>
+    <div>
+        
+    </div>
+</body>
+<script>
+
+    const randomColor = function(){
+        const hex = '0123456789ABCDEF';
+        let color = '#';
+        for(let i = 0; i<6; i++){
+            color += hex[Math.floor(Math.random() *16)];
+        }
+        return color
+    }
+    function changeBgColor (){
+        document.body.style.backgroundColor = randomColor();
+    }
+    let IntervalId;
+    const startChangingColor =  function () {
+         if(!IntervalId){
+            IntervalId = setInterval(changeBgColor, 1000);
+        }
+
+    }
+    const stopChangingColor = function(){
+        clearInterval(IntervalId)
+        IntervalId = null;
+    }
+
+    document.querySelector('#start').addEventListener(
+        'click', startChangingColor
+    )
+    document.querySelector('#stop').addEventListener(
+        'click', stopChangingColor
+    )
+</script>
+</html>
